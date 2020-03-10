@@ -1,8 +1,8 @@
-variable "credentials_file_demo3" {
+variable "credentials_file" {
   description = "TF_VAR = Path to the service account key file in JSON format"
   type        = string
 }
-variable "project_id_demo3" {
+variable "project_id" {
   description = "TF_VAR = The ID of the project"
   type        = string
 }
@@ -94,24 +94,24 @@ variable "agent_ssh" {
   description = "Using ssh-agent or not"
   default     = "false"
 }
-variable "user_name_demo3" {
-  description = "The user that we should use for the SSH connection"
+variable "user_name_de" {
+  description = "TF_VAR = The user that we should use for the SSH connection"
   type        = string
 }
 variable "p_key" {
-  description = "The path of an SSH key to use for the connection"
+  description = "TF_VAR = The path of an SSH key to use for the connection"
   type        = string
 }
-variable "home_dir_demo3" {
-  description = "Home user directory"
+variable "home_dir" {
+  description = "TF_VAR = Home user directory"
   type        = string
 }
 variable "ansible_vault_key" {
-  description = " Path to the ansible vault key file."
+  description = " TF_VAR = Path to the ansible vault key file."
   type        = string
 }
 variable "sa_id" {
-  description = "The account id that is used to generate the service account email address and a stable unique id"
+  description = "TF_VAR = The account id that is used to generate the service account email address and a stable unique id"
   type        = string
 }
 variable "sa_name" {
