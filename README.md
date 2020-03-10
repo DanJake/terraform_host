@@ -49,6 +49,7 @@ Service account or user credentials with the following roles must be used to pro
 - Compute Network Admin: `roles/compute.networkAdmin`
 - Storage Admin: `roles/storage.admin`
 - Service Account Admin: `roles/iam.serviceAccountAdmin`
+- Service Account Key Admin: `roles/iam.serviceAccountKeyAdmin` 
 
 
 [terraform-provider-gcp]: https://www.terraform.io/docs/providers/google/index.html

@@ -11,6 +11,10 @@ resource "google_service_account" "sa" {
   account_id   = var.sa_id
   display_name = var.sa_name
 }
+resource "google_service_account_key" "mykey" {
+  service_account_id = google_service_account.sa.name
+  public_key_type    = "TYPE_X509_PEM_FILE"
+}
 data "google_iam_policy" "admin" {
   binding {
     role = "roles/editor"
@@ -110,4 +114,5 @@ resource "google_compute_instance" "terraform" {
     ssh-keys = "${var.user_name}:${file("~/.ssh/id_rsa.pub")}"
   }
   metadata_startup_script = "chmod u+x ${var.home_dir}/installterraform.sh && ${var.home_dir}/./installterraform.sh"
+
 }
