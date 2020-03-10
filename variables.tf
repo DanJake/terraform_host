@@ -94,7 +94,7 @@ variable "agent_ssh" {
   description = "Using ssh-agent or not"
   default     = "false"
 }
-variable "user_name_de" {
+variable "user_name" {
   description = "TF_VAR = The user that we should use for the SSH connection"
   type        = string
 }

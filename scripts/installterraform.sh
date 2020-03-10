@@ -10,9 +10,9 @@ unzip terraform_0.12.20_linux_amd64.zip
 mv terraform /usr/local/bin/
 rm terraform_0.12.20_linux_amd64.zip
 gcloud auth activate-service-account --key-file /home/rasavo99/Project.json
-git clone https://github.com/DanJake/terraform.git /home/rasavo99/terraform/all
+git clone https://github.com/DanJake/terraform_main.git /home/rasavo99/terraform/main
 git clone https://github.com/DanJake/terraform_sentry.git /home/rasavo99/terraform/sentry
-git clone https://github.com/DanJake/terraform_monitoring.git /home/rasavo99/terraform/monitoring
+git clone https://github.com/ashmrkvch/alerts.git /home/rasavo99/terraform/alerts
 gsutil -m cp -r gs://terraform_state_demo3/terraform.tfvars /home/rasavo99/terraform/sentry
 mkdir -p /home/rasavo99/terraform/sentry/.terraform/plugins/linux_amd64
 chown -R rasavo99:rasavo99 /home/rasavo99/terraform/all
