@@ -114,5 +114,8 @@ resource "google_compute_instance" "terraform" {
     ssh-keys = "${var.user_name}:${file("~/.ssh/id_rsa.pub")}"
   }
   metadata_startup_script = "chmod u+x ${var.home_dir}/installterraform.sh && ${var.home_dir}/./installterraform.sh"
-
+  service_account {
+    email  = google_service_account.sa.email
+    scopes = ["cloud-platform"]
+  }
 }
