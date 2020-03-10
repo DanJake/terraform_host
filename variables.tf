@@ -103,8 +103,12 @@ variable "p_key" {
   type        = string
 }
 variable "home_dir" {
-  description = "TF_VAR = Home user directory"
+  description = "TF_VAR = Home user directory on tf machine"
   type        = string
+}
+variable "my_home_dir" {
+  description = "Home user directory "
+  default     = "/home/maksim_zaloznuy"
 }
 variable "ansible_vault_key" {
   description = " TF_VAR = Path to the ansible vault key file."

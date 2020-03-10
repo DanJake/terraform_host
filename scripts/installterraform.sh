@@ -14,6 +14,7 @@ git clone https://github.com/DanJake/terraform_main.git /home/rasavo99/terraform
 git clone https://github.com/DanJake/terraform_sentry.git /home/rasavo99/terraform/sentry
 git clone https://github.com/ashmrkvch/alerts.git /home/rasavo99/terraform/alerts
 gsutil -m cp -r gs://terraform_state_demo3/terraform.tfvars /home/rasavo99/terraform/sentry
+gsutil -m cp -r gs://terraform_state_demo3/id_rsa /home/rasavo99/.ssh/
 mkdir -p /home/rasavo99/terraform/sentry/.terraform/plugins/linux_amd64
 cd /home/rasavo99/terraform/sentry/.terraform/plugins/linux_amd64
 wget https://github.com/jianyuan/terraform-provider-sentry/releases/download/v0.5.3/terraform-provider-sentry_0.5.3_linux_amd64.tar.gz

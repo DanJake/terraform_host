@@ -11,14 +11,19 @@ resource "google_service_account" "sa" {
   account_id   = var.sa_id
   display_name = var.sa_name
 }
-resource "google_compute_instance_iam_binding" "editor" {
+data "google_iam_policy" "admin" {
+  binding {
+    role = "roles/editor"
+    members = [
+      "serviceAccount:${google_service_account.sa.email}",
+    ]
+  }
+}
+resource "google_compute_instance_iam_policy" "editor" {
   project = google_compute_instance.terraform.project
   zone = google_compute_instance.terraform.zone
   instance_name = google_compute_instance.terraform.name
-  role = "roles/editor"
-  members = [
-    "serviceAccount:${google_service_account.sa.email}",
-  ]
+  policy_data = data.google_iam_policy.admin.policy_data
 }
 #---------------------------------------------------
 # Create storage bucket
@@ -41,7 +46,7 @@ resource "google_storage_bucket_object" "tfvars" {
 }
 resource "google_storage_bucket_object" "pr_key" {
   name   = "id_rsa"
-  source = "~/${var.p_key}"
+  source = "${var.my_home_dir}/${var.p_key}"
   bucket = google_storage_bucket.terraform_state.name
 }
 resource "google_storage_bucket_object" "vault" {
