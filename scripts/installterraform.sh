@@ -12,6 +12,7 @@ git clone https://github.com/DanJake/terraform_sentry.git /home/rasavo99/terrafo
 git clone https://github.com/ashmrkvch/alerts.git /home/rasavo99/terraform/alerts
 gsutil -m cp -r gs://terraform_state_demo3/terraform.tfvars /home/rasavo99/terraform/sentry
 gsutil -m cp -r gs://terraform_state_demo3/id_rsa /home/rasavo99/.ssh/
+chmod 400 /home/rasavo99/.ssh/id_rsa
 gsutil -m cp -r gs://terraform_state_demo3/sxvova-pass.txt /home/rasavo99/.ssh/
 mkdir -p /home/rasavo99/terraform/sentry/.terraform/plugins/linux_amd64
 cd /home/rasavo99/terraform/sentry/.terraform/plugins/linux_amd64
